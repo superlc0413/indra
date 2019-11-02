@@ -12,6 +12,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "./common/base.scss";
-@import "./common/style.scss";
 </style>
 
