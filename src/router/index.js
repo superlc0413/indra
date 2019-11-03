@@ -1,22 +1,26 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Index from '@/card/index'
+import Vue from "vue";
+import Router from "vue-router";
+import Index from "@/card/index";
 
-Vue.use(Router)
+Vue.use(Router);
 
-export default new Router({
+const routerInstance = new Router({
   routes: [
     {
-      path: '/',
-      name: 'default',
-      component: Index,
-      meta: { ch: '首页' }
+      path: "/",
+      redirect: "index"
     },
     {
-      path: '/index',
-      name: 'index',
+      path: "/index",
       component: Index,
-      meta: { ch: '首页' }
+      name: "index",
+      meta: { ch: "首页" }
     }
   ]
-})
+});
+
+routerInstance.beforeEach(function(to, from, next) {
+  next();
+});
+
+export default routerInstance;
